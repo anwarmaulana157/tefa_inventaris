@@ -1,0 +1,41 @@
+Rancangan database untuk aplikasi inventaris memerlukan tabel-tabel yang dapat menyimpan informasi-informasi yang diperlukan. Berikut adalah contoh sederhana rancangan database untuk aplikasi inventaris dengan menggunakan model relasional:
+
+    Tabel Barang:
+        BarangID (PK): Kunci utama barang
+        Nama: Nama barang
+        Deskripsi: Deskripsi barang
+        KategoriID (FK): Kunci asing ke tabel Kategori
+        NomorSeri: Nomor seri barang
+        TanggalPembelian: Tanggal pembelian barang
+        Harga: Harga barang
+        Stok: Jumlah stok barang
+
+    Tabel Kategori:
+        KategoriID (PK): Kunci utama kategori
+        NamaKategori: Nama kategori
+
+    Tabel Vendor:
+        VendorID (PK): Kunci utama vendor
+        NamaVendor: Nama vendor
+        Alamat: Alamat vendor
+        Kontak: Informasi kontak vendor
+
+    Tabel Pembelian:
+        PembelianID (PK): Kunci utama pembelian
+        BarangID (FK): Kunci asing ke tabel Barang
+        VendorID (FK): Kunci asing ke tabel Vendor
+        Jumlah: Jumlah barang yang dibeli
+        TanggalPembelian: Tanggal pembelian
+
+    Tabel PergerakanBarang:
+        PergerakanID (PK): Kunci utama pergerakan barang
+        BarangID (FK): Kunci asing ke tabel Barang
+        TanggalPindah: Tanggal perpindahan barang
+        LokasiLama: Lokasi sebelum perpindahan
+        LokasiBaru: Lokasi setelah perpindahan
+
+    Tabel Perawatan:
+        PerawatanID (PK): Kunci utama perawatan
+        BarangID (FK): Kunci asing ke tabel Barang
+        TanggalPerawatan: Tanggal perawatan
+        Keterangan: Keterangan perawatan
